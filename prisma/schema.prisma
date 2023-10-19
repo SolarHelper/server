@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SolarPanel {
+  id                               String  @id @default(uuid())
+  brand                            String
+  model                            String
+  type                             String
+  nominal_power_watt               Int
+  nominal_tok_amper                Decimal
+  nominal_voltage                  Decimal
+  efficiency                       Int
+  ip_class                         String
+  number_of_photocells_in_module   Int
+  number_of_panels_in_set          Int
+  height                           Decimal
+  width                            Decimal
+  depth_mm                         Decimal
+  weight_kg                        Decimal
+  country_of_registration_of_brand String
+  additional                       String
+  photo                            String
+  price                            Decimal
+}
